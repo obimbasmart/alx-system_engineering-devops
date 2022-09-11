@@ -1,2 +1,2 @@
 #!/bin/bash
-sort -k3 | head -n 11 | cut -d'    ' --fields=1
+sort -k3 | head -n 11 | cut -d$'\t' --fields=1

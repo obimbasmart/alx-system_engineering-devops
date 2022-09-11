@@ -1,2 +1,2 @@
 #!/bin/bash
-find -type f -name "*.gif" -printf '%P\n' | cut -d'.' -f 1
+find -type f -name "*.gif" -printf | cut -d'.' -f 1

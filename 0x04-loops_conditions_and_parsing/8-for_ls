@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # display file names and directory name in current working direcoty
 
-for file in ./*; do echo "${file:2}"; done
+for file in ./*; do 
+	file=${file:2} #remove leading backslach ./
+	file=${file#*-} #remove anything before the first backslash
+
+	echo "$file"
+done

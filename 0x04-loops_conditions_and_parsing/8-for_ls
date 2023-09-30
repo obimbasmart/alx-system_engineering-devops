@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display file names and directory name in current working direcoty
+
+for file in ./*; do echo "${file:2}"; done

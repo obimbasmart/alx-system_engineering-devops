@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# display the content of /etc/passwd file
+
+exec {file_desc}< /etc/passwd # create fd for reading
+
+while IFS=":" read -r -a line_array -u $file_desc
+do 
+	echo "${line_array[0]}:${line_array[2]}:${line_array[5]}"
+done
+exec {file_desc}>&- # close file descriptor

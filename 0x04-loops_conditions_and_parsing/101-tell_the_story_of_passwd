@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# display the content of /etc/passwd file
+
+exec {file_desc}< /etc/passwd # create fd for reading
+
+while IFS=":" read -r -a input_arr -u $file_desc
+do 
+	echo "The user ${input_arr[0]} is part of the ${input_arr[3]} gang, lives in ${input_arr[5]} and rides ${input_arr[6]}. ${input_arr[2]}'s place is protected by the passcode ${input_arr[1]}, more info about the user here: ${input_arr[4]}"
+done
+exec {file_desc}>&- # close file descriptor

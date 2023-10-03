@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# list the current running proccess
+
+top

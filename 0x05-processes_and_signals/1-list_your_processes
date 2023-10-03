@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # list the current running proccess
 
-top
+ps -U root -u root u

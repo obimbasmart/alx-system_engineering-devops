@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# init (daemon) script to manage ./manage_my_process
+
+
+script_name="manage_my_process"
+pidfile="my_process.pid"
+
+case "$1" in 
+	start)
+		/bin/bash $script_name & echo "manage_my_process started"
+		;;
+	stop)
+		pid=$(cat $pidfile)
+		kill -SIGTERM "$pid" & rm $pidfile & echo "manage_my_process stopped"
+		;;
+	restart)
+		pid=$(cat $pidfile)
+		kill -SIGTERM "$pid" & rm $pidfile & /bin/bash $script_name & echo "manage_my_process restarted"
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac

@@ -7,7 +7,7 @@ pidfile="/var/run/my_process.pid"
 
 case "$1" in 
 	start)
-		/bin/bash $script_name & echo "manage_my_process started"
+		./manage_my_process & echo "manage_my_process started"
 		;;
 	stop)
 		pid=$(cat $pidfile)

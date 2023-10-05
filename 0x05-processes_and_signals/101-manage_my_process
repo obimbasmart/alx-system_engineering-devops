@@ -3,7 +3,7 @@
 
 
 script_name="manage_my_process"
-pidfile="my_process.pid"
+pidfile="/var/run/my_process.pid"
 
 case "$1" in 
 	start)

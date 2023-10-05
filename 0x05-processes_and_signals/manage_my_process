@@ -3,7 +3,7 @@
 
 filename="/tmp/my_process"
 
-echo $$ > "my_process.pid"
+echo $$ > "/var/run/my_process.pid"
 trap 'exit' TERM
 
 while true

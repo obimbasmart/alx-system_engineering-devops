@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# display "To infinity and beyond" indifinitely
+
+pidfile="/var/run/myscript.pid"
+echo $$ > $pidfile # alternatively: pid=$(pgrep -f -r S "100-process_and_pid_file")
+
+trap 'echo "I hate the kill command"; rm $pidfile; exit' TERM
+trap 'echo "Y U no love me?!"' INT
+
+num=1
+while [ $num -eq 1 ]
+do 
+	echo "To infinity and beyond"
+	sleep 2s
+done

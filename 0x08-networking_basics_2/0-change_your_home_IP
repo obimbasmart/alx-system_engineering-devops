@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# configures an Ubuntu server, assign IP address
+
+host_file="hosts"
+
+cp "$host_file" "hosts.new"  &&
+echo -e "# == configure custom domain servers ==\n\
+127.0.0.2\tlocalhost\n\
+8.8.8.8\t\tfacebook.com\n" >> "hosts.new"
+
+
+cp -f "hosts.new" "$host_file"

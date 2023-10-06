@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # configures an Ubuntu server, assign IP address
 
-host_file="hosts"
+host_file="/etc/hosts"
+new_hostfile="hosts.new"
 
-cp "$host_file" "hosts.new"  &&
-echo -e "# == configure custom domain servers ==\n\
+cp "$host_file" "$new_hostfile"  &&
+sed -i '0,/127.0.0.1/s//127.0.0.2/' "$new_hostfile"
+
+echo -e "\n# == configure custom domain servers ==\n\
 127.0.0.2\tlocalhost\n\
-8.8.8.8\t\tfacebook.com\n" >> "hosts.new"
+8.8.8.8\t\tfacebook.com\n" >> "$new_hostfile"
 
-
-cp -f "hosts.new" "$host_file"
+sudo cp -f "hosts.new" "$host_file"

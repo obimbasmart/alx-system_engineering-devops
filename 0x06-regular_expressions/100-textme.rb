@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-# match any 10 digit phone
+# search for SENDER, RECIEVER and FLAGS used
 
 puts ARGV[0].scan(/(?<=\[from:|to:|flags:)(.*?)\]/).join(',')

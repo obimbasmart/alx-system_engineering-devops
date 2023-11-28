@@ -1,3 +1,4 @@
+# create a file in /tmp folder and validate the content
 
 file { '/tmp/school':
     ensure  => present,

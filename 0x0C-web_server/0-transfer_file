@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+# transfer file from client to remote server
+# takes 4 parameter:
+#	path_to_file
+#	IP
+#	username
+#	path to ssh_identity_file
+
+path_to_file=$1
+IP=$2
+username=$3
+ssh_identity_file=$4
+
+scp -i "$ssh_identity_file" "$path_to_file" "${username}@${IP}:~/"

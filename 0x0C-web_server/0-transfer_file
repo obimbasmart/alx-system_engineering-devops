@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # transfer file from client to remote server
 # takes 4 parameter:
 #	path_to_file

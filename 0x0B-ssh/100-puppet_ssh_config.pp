@@ -1,6 +1,6 @@
 # ensure config file is applied to client
 
-file { '/home/obimbasmart/.ssh/config':
+file { '/etc/ssh/ssh_config':
     ensure => present,
     content => "
     HOST my_alx_server

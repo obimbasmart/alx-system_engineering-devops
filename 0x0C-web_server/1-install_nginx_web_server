@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # install and configure nginx on web server
-i
-sudo apt-get update # update apt repo
+
+sudo apt-get update
 sudo apt-get -y install nginx # install nginx
+
 # change file ownwership to current user
 sudo chown -R $USER:$USER /var/www/html
 # update html doc
 echo "Hello World!"  > /var/www/html/index.nginx-debian.html
+
 # check for error
 sudo nginx -t
 #restart nginx
-sudo servic nginx restart
+sudo service nginx restart

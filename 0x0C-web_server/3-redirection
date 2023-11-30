@@ -15,7 +15,7 @@ sudo chown -R "$USER":"$USER" "$nginx_config"
 
 # update html doc
 echo "Hello World!"  > /var/www/html/index.nginx-debian.html
-# add location block for redirection
+# shellcheck disable=SC1003
 sudo sed -i -e '/^server {/,/^}/{/^}/i\'"$new_content" -e '}' "$nginx_config"
 
 # check for error

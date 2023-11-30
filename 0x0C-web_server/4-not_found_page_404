@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# install and configure nginx on web server
+
+
+nginx_config="/etc/nginx/sites-available/default"
+new_content="\n\terror_page 404 /404.html;\n\tlocation /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
+
+
+sudo apt-get update
+sudo apt-get -y install nginx # install nginx
+
+# change file owner
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chown -R "$USER":"$USER" "$nginx_config"
+
+# shellcheck disable=SC1003
+sudo sed -i -e '/^server {/,/^}/{/^}/i\'"$new_content" -e '}' "$nginx_config"
+# custom 404 page
+echo "Ceci n'est pas une page" > "/var/www/html/404.html"
+
+# check for error
+sudo nginx -t
+#restart nginx
+sudo service nginx restart

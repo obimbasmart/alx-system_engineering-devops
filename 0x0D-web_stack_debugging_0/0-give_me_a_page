@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# restart apache2 web server
+
+sudo docker exec -ti fd90f68ae88a  /bin/bash -c "service apache2  start"

@@ -2,3 +2,4 @@
 # fix nginx not listening to port 80 - install new nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
+service nginx start

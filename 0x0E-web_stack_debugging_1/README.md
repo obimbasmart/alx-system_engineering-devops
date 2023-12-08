@@ -1,6 +1,7 @@
 # Web stack debugging #1
 
-Certainly! Here's a formatted version of your request:
+> The Webstack debugging are series of project provided by `ALX_SE` to train me in the art of debugging. Computers and software rarely work the way we want (that’s the “fun” part of the job!). In this debugging series, broken/bugged webstacks has been given to me, the final goal is to come up with a Bash script that once executed, will bring the webstack to a working state. 
+
 
 ### Task 00 - `0-nginx_likes_port_80`
 Using your debugging skills, find out what’s keeping your Ubuntu container’s `Nginx` installation from listening on port `80`. Feel free to install whatever tool you need, start and destroy as many containers as you need to debug the issue. Then, write a Bash script with the minimum number of commands to automate your fix.

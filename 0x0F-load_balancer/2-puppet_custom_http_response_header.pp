@@ -17,8 +17,8 @@ file { '/var/www/html/index.nginx-debian.html':
   ensure  => present,
   content => 'Breadwinner why ?!',
   recurse => true,
-  owner   => 'obimbasmart',
-  group   => 'obimbasmart'
+  owner   => 'ubuntu',
+  group   => 'ubuntu'
 }
 
 exec { 'change_file_permission':

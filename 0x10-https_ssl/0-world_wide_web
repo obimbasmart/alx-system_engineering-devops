@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+dig_it() {
+	domain="$1"
+	sub_domain="$2"
+	dig "$sub_domain"."$domain" | grep -A1 'ANSWER SECTION:' \
+		| sed -n '2p' \
+		| awk -v sub_dm="$sub_domain" \
+		'{ print "The subdomain", sub_dm, "is a", $4, "record and points to", $5 }'
+}
+
+if [ -z "$2" ]; then
+	dig_it "$1" "www"
+	dig_it "$1" "lb-01"
+	dig_it "$1" "web-01"
+	dig_it "$1" "web-02"
+else
+	dig_it "$1" "$2"
+fi

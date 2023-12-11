@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# display information about a subdomain
 
 dig_it() {
 	domain="$1"

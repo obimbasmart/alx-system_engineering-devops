@@ -3,7 +3,7 @@
 
 <div align=center>
     <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1702745981558/9abfcee4-f28b-4ba4-b282-e0d30541c3eb.png?auto=compress,format&format=webp">
-<div>
+</div>
 
 A network is a collection of computers linked together that communicate via some predefined standards known as protocols. The popular protocol used for communcation on the internet is the `TCP/IP` protocaol.The Internet in its current form is just a computer network - a collection of devices and computers linked together: this is known as Internet. It is the backbone of our ability to share information globally, watch videos, and connect with individuals across vast distances. However, one may ask, what transpires behind the scenes? How does the transition from entering a web address to viewing content on our screens unfold? To illustrate this process, let's delve into a straightforward example: typing 'www.google.com' into our web browser and hitting enter
 

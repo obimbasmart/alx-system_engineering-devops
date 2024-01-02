@@ -13,7 +13,7 @@ if __name__ == "__main__":
         "https://jsonplaceholder.typicode.com/todos/",
         params={"userId": emp_id})
 
-    if response.status_code == 200:
+    if response.status_code == 200 and response.text != "[]":
         todo_info = response.json()
         response = requests.get(
             "https://jsonplaceholder.typicode.com/users/",

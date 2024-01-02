@@ -25,4 +25,4 @@ if __name__ == "__main__":
         print("Employee {} is done with tasks({}/{}):".format(
             user_name, len(completed_tasks), len(todo_info)
         ))
-        [print(f"     {task['title']}") for task in completed_tasks]
+        [print(f"\t {task['title']}") for task in completed_tasks]

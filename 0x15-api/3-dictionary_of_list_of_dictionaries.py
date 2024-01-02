@@ -35,16 +35,14 @@ def get_employee_data(emp_id):
                 sorted_dict[key] = to_do[key]
             sorted_todo_list.append(sorted_dict)
 
-        return ({
-            emp_id: sorted_todo_list
-        })
+        return sorted_todo_list
 
 
 if __name__ == "__main__":
-    all_employee_data = []
+    all_employee_data = {}
 
     for emp_id in range(1, 11):
-        all_employee_data.append(get_employee_data(emp_id))
+        all_employee_data[emp_id] = get_employee_data(emp_id=emp_id)
 
     with open("todo_all_employees.json", 'w') as json_file:
         json.dump(all_employee_data, json_file)

@@ -26,7 +26,7 @@ if __name__ == "__main__":
         for item in json_data:
             del item['id']
 
-        with open(emp_id + ".csv", "w") as csv_file:
+        with open(emp_id + ".csv", "w", newline='') as csv_file:
             fieldnames = ["userId", "name", "completed", "title"]
             csv_writer = csv.DictWriter(
                 csv_file, fieldnames=fieldnames, quoting=1)

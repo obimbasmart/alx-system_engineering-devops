@@ -20,7 +20,7 @@ if __name__ == "__main__":
         response = requests.get(
             "https://jsonplaceholder.typicode.com/users/",
             params={"id": emp_id})
-        user_name = response.json()[0]["name"]
+        user_name = response.json()[0]["username"]
 
         # delete keys not needed, change keys name, arrange in order
         order = ["task", "completed", "username"]

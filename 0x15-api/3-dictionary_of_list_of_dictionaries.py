@@ -21,7 +21,7 @@ def get_employee_data(emp_id):
         response = requests.get(
             "https://jsonplaceholder.typicode.com/users/",
             params={"id": emp_id})
-        user_name = response.json()[0]["name"]
+        username = response.json()[0]["username"]
 
         # delete keys not needed, change keys name, arrange in order
         order = ["username", "task", "completed"]
@@ -29,7 +29,7 @@ def get_employee_data(emp_id):
 
         for to_do in todo_list:
             to_do["task"] = to_do["title"]
-            to_do["username"] = user_name
+            to_do["username"] = username
             sorted_dict = {}
             for key in order:
                 sorted_dict[key] = to_do[key]

@@ -5,7 +5,6 @@ returns information about his/her TODO list progress."""
 
 import requests
 import sys
-from pprint import pprint as pp
 
 if __name__ == "__main__":
     _, emp_id = sys.argv

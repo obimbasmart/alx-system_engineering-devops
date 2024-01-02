@@ -19,7 +19,7 @@ if __name__ == "__main__":
         response = requests.get(
             "https://jsonplaceholder.typicode.com/users/",
             params={"id": emp_id})
-        user_name = response.json()[0]["name"]
+        user_name = response.json()[0]["username"]
         json_data = [{**item, "name": user_name} for item in json_data]
 
         # remove attr not needed

@@ -9,6 +9,6 @@ exec { 'fix-typo-sed':
 
 exec { 'restart-apache2':
   command => 'sudo service apache2 restart',
-  path    => ['usr/bin', 'usr/sbin']
+  path    => '/usr/bin:/usr/sbin:/bin'
 }
 
